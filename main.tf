@@ -1,3 +1,14 @@
+
+terraform {
+  cloud {
+    organization = "example-org-890dc1"
+    hostname = "app.terraform.io" # Optional; defaults to app.terraform.io
+
+    workspaces {
+      tags = ["networking", "source:cli"]
+    }
+  }
+}
 provider "aws" {
   region     = "us-east-1"
 }
